@@ -1,32 +1,43 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Task 1</title>
         <style type="text/css">
             .input_form{
                 border: 1px solid black;
-                width: 150px;
+                width: 200px;
                 padding: 10px;
             }
             label{
                 font-weight: bold;
             }
+            #first, #second{
+                width: 180px;
+            }
         </style>
+        <script>
+            function sum() {
+                var a = parseFloat(document.getElementById('first').value);
+                var b = parseFloat(document.getElementById('second').value);
+                var result;
+                result=(a+b);
+                return(+result.toFixed(10)); //
+                }
+        </script>
     </head>
     <body>
-        <div class="input_form">
-            <label>Первое число: 
-                <br>
-                <input type="text" name="first">
-            </label> 
+        <form class="input_form">
+            <label for="first">Первое число: </label> 
+            
+            <input id="first" type="text" name="first" value="0.1">
             <br>
             <br>
-            <label>Второе число: 
-                <br>
-                <input type="text" name="second">
-            </label>
+            <label for="second">Второе число: </label>
+            <br>
+            <input id="second" type="text" name="second" value="0.2">
             <br>
             <br>
-            <input type="submit" value="Сложить">
-        </div>
+            <input type="submit" value="Сложить" onclick="alert('Результат\n\n' + sum())">
+        </form>
     </body>
 </html>
